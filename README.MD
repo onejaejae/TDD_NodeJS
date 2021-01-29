@@ -207,3 +207,44 @@ https://github.com/visionmedia/supertest
     -   limit이 숫자형이 아니면 400을 응답한다.
 
     -   offset이 숫자형이 아니면 400을 응답한다.
+
+
+###  실습 GET /user/:id
+
+-   success
+
+    -   id가 1인 유저 객체를 반환한다
+
+- error
+
+    - id가 숫자가 아닐 경우 400으로 응답한다.
+
+    -   id로 유저를 찾을 수 없는 경우 404로 응답한다.
+
+### 실습 DELETE /user/:id
+
+-    success
+    
+     -    204를 응답한다
+
+-   error
+
+    -   id가 숫자가 아닐 경우 400으로 응답한다
+
+
+### 실습 POST /users
+
+-   success
+
+    -   201 상태 코드를 반환한다
+
+    - 생성된 유저 객체를 반환한다
+    
+    -  입력한 name을 반환한다
+
+-   erro
+    
+    - name 파라미터 누락 시 400을 반환한다
+
+    -   name이 중복일 경우 400을 반환한다
+
