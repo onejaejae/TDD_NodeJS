@@ -158,3 +158,17 @@ https://gongbu-ing.tistory.com/26
 -   5XX: 내가 문제임
   
     -   500: 서버 에러 (Interel server error)
+
+### 테스트 주도 개발
+
+-   TDD로 개발하자!
+
+-   mocha, should, superTest
+
+### Mocha
+
+-   모카(mocha)는 테스트 코드를 돌려주는 테스트 러너.
+
+-    테스트 수트 : 테스트 환경으로 모카에서는 describe()로 구현한다.
+
+-   테스트 케이스 : 실제 테스트를 말하며 모카에서는 it()로 구현한다.

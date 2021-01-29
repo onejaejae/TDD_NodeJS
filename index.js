@@ -1,8 +1,17 @@
 const express = require("express");
+const morgan = require("morgan");
 const app = express();
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
+app.use(morgan("dev"));
+
+const users = [
+  { id: 1, name: "elice" },
+  { id: 2, name: "bek" },
+  { id: 3, name: "chris" },
+];
+
+app.get("/users", (req, res) => {
+  res.json(users);
 });
 
 app.listen(3000, function () {
