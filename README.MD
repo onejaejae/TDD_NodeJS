@@ -111,3 +111,50 @@ https://gongbu-ing.tistory.com/26
 
 -   res.send(), res.json(), res.status() 메서드를 주로 사용한다.
 
+### HTTP 요청
+
+-   모든 자원은 명사로 식별한다.
+
+-   HTTP 경로로 자원을 요청한다
+
+-   예)
+
+    -   GET /users
+
+    -   GET /users/{id}
+
+### HTTP 메서드
+
+-   서버 자원에 대한 행동을 나타낸다. (동사로 표현)
+
+    -   GET: 자원을 조회
+  
+    -   POST: 자원을 생성
+  
+    -   PUT: 자원을 갱신
+  
+    -   DELETE: 자원을 삭제
+
+-    이는 익스프레스 어플리케이션의 메서드로 구현되어 있다.
+
+### HTTP 상태코드
+
+-   2XX: 자, 여기있어
+  
+    -   200: 성공(success), GET, PUT
+  
+    -   201: 작성됨(created), POST
+  
+    -   204: 내용 없음 (No Conent), DELETE
+  
+-   4XX: 니가 문제임
+  
+    -   400: 잘못된 요청 (Bad Request)
+    -   401: 권한 없음 (Unauthorized)
+    -   404: 찾을 수 없음 (Not found)
+    -   409: 충돌 (Conflict)
+  
+
+-   5XX: 내가 문제임
+  
+    -   500: 서버 에러 (Interel server error)
