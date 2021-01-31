@@ -248,3 +248,22 @@ https://github.com/visionmedia/supertest
 
     -   name이 중복일 경우 400을 반환한다
 
+관련 자료
+
+https://heropy.blog/2018/03/16/mocha/
+
+### 실습 PUT /users/:id
+
+-    success
+
+    -   변경된 name를 응답한다
+
+-   error
+
+    -   정수가 아닌 id일 경우 400 응답
+
+    -   name이 없을 경우 400 응답
+
+    -   없는 유저일 경우 404 응답
+
+    -   이름이 중복일 경우 409 응답

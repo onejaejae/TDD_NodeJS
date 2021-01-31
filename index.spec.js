@@ -88,4 +88,50 @@ describe("POST /users", () => {
       body.should.have.property("name", name);
     });
   });
+  describe("실패 시", () => {
+    it("name 파라미터 누락 시 400을 반환한다", (done) => {
+      request(app).post("/users").send({}).expect(400).end(done);
+    });
+
+    it("name이 중복일 경우 409를 반환한다", (done) => {
+      request(app).post("/users").send({ name: "chris" }).expect(409).end(done);
+    });
+  });
+});
+
+describe("PUT /users/:id", () => {
+  describe("성공 시", () => {
+    it("변경된 name을 응답한다", (done) => {
+      const name = "chally";
+      request(app)
+        .put("/users/3")
+        .send({ name })
+        .end((err, res) => {
+          res.body.should.have.property("name", name);
+          done();
+        });
+    });
+  });
+
+  describe("실패 시", () => {
+    it("정수가 아닌 id를 응답할 경우 400을 응답한다", (done) => {
+      request(app).put("/users/one").expect(400).end(done);
+    });
+
+    it("name이 없을 경우 400을 응답한다", (done) => {
+      request(app).put("/users/1").send({}).expect(400).end(done);
+    });
+
+    it("없는 유저일 응답할 경우 404을 응답한다", (done) => {
+      request(app).put("/users/999").send({ name: "jo" }).expect(404).end(done);
+    });
+
+    it("이름이 중복일 경우 409을 응답한다", (done) => {
+      request(app)
+        .put("/users/one")
+        .send({ name: "bek" })
+        .expect(400)
+        .end(done);
+    });
+  });
 });
