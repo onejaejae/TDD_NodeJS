@@ -4,8 +4,8 @@
   "description": "-   브라우저 밖에서 자바스크립트 코드를 실행할 수 있다.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha index.spec.js",
-    "start": "nodemon index.js"
+    "test": "NODE_ENV=test mocha api/user/user.spec.js",
+    "start": "nodemon bin/www.js"
   },
   "author": "",
   "license": "ISC",
