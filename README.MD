@@ -267,3 +267,67 @@ https://heropy.blog/2018/03/16/mocha/
     -   없는 유저일 경우 404 응답
 
     -   이름이 중복일 경우 409 응답
+
+### 데이터베이스
+
+-   SQL
+    
+    -   MySQL, PostgreSQL, Aurora, Sqlite
+
+-   NoSQL
+
+    - MongoDB, DynamoDB
+
+-   In Memory DB
+
+    - Redis, Memcashed
+
+### SQL 쿼리 기초
+
+-   insert users (`name`) values (`alice`)
+
+-   select * from users;
+
+-   update users set name='bek' where id=1
+
+-   delete from users where id=1
+
+
+### ORM
+
+-   데이터베이스를 객체로 추상화해논것을 ORM(Object Relation Mapping)이라고 한다.
+
+-   쿼리를 직접 작성하는 대신 ORM의 메서드로 데이터를 관리할 수 있는 것이 장점이다.
+
+-   노드에서 SQL ORM은 시퀄라이져(Sequelize)가 있다.
+
+
+-   insert users (`name`) values (`alice`)
+  
+      -  User.create({name : 'alice'})
+
+-   select * from users;
+    
+    -  User.findAll()  
+
+-   update users set name='bek' where id=1
+  
+      - User.update({name : 'bek'}, {where: {id :1}}) 
+
+-   delete from users where id=1
+
+    -   User.destory({where : { id : 1}})
+
+### 모델
+
+-   데이터베이스 테이블을 ORM으로 추상화한것을 모델이라고 한다.
+
+-   우리가 사용할 유저 모델을 만들어보자
+
+    -   sequelize.define() : 모델 정의
+
+    -   sequelize.sync() : 데이터베이스 연동
+
+### API-디비 연동
+
+-   API 로직인 user.ctrl.js에서 모델을 연동하여 디비를 연결한다

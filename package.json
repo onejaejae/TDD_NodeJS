@@ -4,16 +4,20 @@
   "description": "-   브라우저 밖에서 자바스크립트 코드를 실행할 수 있다.",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV=test mocha api/user/user.spec.js",
+    "test": "cross-env NODE_ENV=test mocha api/user/user.spec.js --timeout 10000 -w" ,
     "start": "nodemon bin/www.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "cross-env": "^7.0.3",
     "express": "^4.17.1",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.7"
+    "node-pre-gyp": "^0.17.0",
+    "nodemon": "^2.0.7",
+    "sequelize": "^6.5.0",
+    "sqlite3": "^5.0.1"
   },
   "devDependencies": {
     "mocha": "^8.2.1",
