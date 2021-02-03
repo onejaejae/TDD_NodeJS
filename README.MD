@@ -331,3 +331,8 @@ https://heropy.blog/2018/03/16/mocha/
 ### API-디비 연동
 
 -   API 로직인 user.ctrl.js에서 모델을 연동하여 디비를 연결한다
+
+
+### 학습 정리
+
+-    로직을 구현할 때는 test code를 먼저 만들고 로직을 구현하라
